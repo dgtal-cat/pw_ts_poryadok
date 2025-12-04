@@ -118,6 +118,8 @@ test.describe('Add/delete products to/from cart', async () => {
 		)
 
 		await checkoutPage.deleteProductDialog.deleteButton.click()
+		
+		await expect(checkoutPage.deleteProductDialog.el).not.toBeVisible()
 
 		await checkoutPage.checkoutProductList.byId(1).deleteButton.click()
 
